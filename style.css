@@ -1,0 +1,256 @@
+body {
+	background-color: #f4f4f4;
+	color: #555;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.6em;
+	margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+}
+
+.homeless {
+    display: flex;
+}
+
+.owners {
+    display: flex;
+}
+
+#main-header {
+    background-color: lightcoral;
+	color: #fff;
+}
+
+#navbar {
+	background-color: #333;
+	color: #fff;
+}
+
+#navbar ul {
+	padding: 0;
+	list-style: none;
+}
+
+#navbar li {
+	display: inline;
+    /* для отображения меню в строку */
+}
+
+#navbar a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	padding-right: 15px;
+}
+
+#navbar a:hover {
+    /* при наведении курсора на пункт меню */
+	color: #c0c0c0;
+}
+
+#main-page {
+	background-image: url('https://images.unsplash.com/photo-1518914781460-a3ada465edec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+	/* задаю минимальную ширину окна, чтобы обработать картинку при слишком маленьких размерах */
+	min-width: 480px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#main-page h1 {
+	color: #fff;
+	font-size: 60px;
+	line-height: 1.6em;
+	padding-top: 30px;
+}
+
+#main-text {
+	display: flex;
+    flex-direction: column; /* в столбик выводятся разные элементы текстовой части */
+	padding: 0 30px;
+	box-sizing: border-box;
+    flex: 3; /* 3 части из 5 горизонтально */
+}
+
+#sidebar {
+	float: right;
+	background: #333;
+	color: #fff;
+    border-radius: 10px;
+	padding: 10px;
+    margin: 20px 20px 20px 0;
+	box-sizing: border-box;
+    flex: 2; /* 2 части из 5 горизонтально */
+    justify-self: center;
+    align-self: flex-start; /* располагается вверху */
+}
+
+#sidebar img {
+    border-radius: 10px;
+}
+
+#main-footer {
+	background: #333;
+	color: #fff;
+	text-align: center;
+	padding: 5px;
+	margin-top: 40px;
+}
+
+#info a {
+    color: black;
+}
+
+#info a:hover {
+    color: lightcoral;
+}
+
+.pic {
+    height: 65vh;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+    flex: 1; /* изначально каждая картинка занимает по 1 части */ 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 500ms ease-in-out;
+    display: flex;
+    min-width: 80px;
+}
+
+.pic h3 {
+    position: absolute;
+    font-size: 20px;
+    bottom: 10px;
+    left: 10px;
+    margin: 0;
+}
+
+.pic p {
+    position: absolute;
+    font-size: 15px;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+    opacity: 0; /* пояснение к картинке не отображается до клика по ней */
+}
+
+.pic.active {
+    flex: 5; /* при нажатии на картинку она начинает занимать 5 частей */
+}
+
+.pic.active p {
+    opacity: 1; /* при нажатии на картинку пояснение становится видно */
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+#how-to-help img {
+    border-radius: 10px;
+}
+
+.supply {
+    display: flex;
+    align-items: center;
+}
+
+.supply p {
+    padding: 0 0 0 20px;
+}
+
+.walk {
+    display: flex;
+    align-items: center;
+}
+
+.walk p {
+    padding: 0 20px 0 0;
+}
+
+.adopt {
+    display: flex;
+    align-items: center;
+}
+
+.adopt p {
+    padding: 0 0 0 20px;
+}
+
+.vols li {
+    font-size: 20px;
+    list-style-type: none;
+}
+
+.vols ul {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    flex-wrap: wrap; /* перенос элементов списка (создание следующей колонки */
+}
+
+@media(max-width: 640px) { /* при уменьшении размера окна параметры следующих элементов изменяются */
+	.main {
+		width: 100%;
+		flex-direction: column; /* элементы главной страницы начинают располагаться друг за другом в столбик */
+	}
+
+    #sidebar {
+        width: 90vh;
+    }
+
+    #main-page {
+        width: 100%;
+        background-size: 100%;
+        -webkit-background-size: 100%;
+    }
+    
+    #main-page h1 {
+        font-size: 30px;
+        padding-top: 10px;
+    }
+
+    .homeless {
+        flex-wrap: wrap;
+    }
+
+    .owners{
+        flex-wrap: wrap;
+    }
+
+    .vols ul {
+        height: 100%;
+    }
+
+    .supply {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .walk {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .adopt {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #how-to-help img {
+        width: 100%;
+        height: 100%;
+    }
+}
